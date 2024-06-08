@@ -1,0 +1,274 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #e5e5e5;
+}
+
+/*----------HEADER----------*/
+header {
+    width: 100%;
+    height:120px;
+    background-color: #070580;
+    box-shadow: 0px 0px 40px #000;
+
+}
+
+.contenedor-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+/*.contenedor-header .portada{
+    width: 200px;
+    height: auto;
+    max-height: 100%;
+    padding: 0 50px;
+}*/
+
+.contenedor-header h1{
+    font-family: "Tan-Meringue";
+    color: #F75B2B;
+}
+
+
+
+.contenedor-links ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+}
+
+.contenedor-links li{
+    padding: 0 10px;
+}
+
+/*TAMAÑO LETRAS a*/
+
+.contenedor-links a{
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.carrito-img{
+    width: 50px;
+    padding: 0;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .hamburger {
+    width: 25px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+}
+
+/*----------MAIN----------*/
+
+.contenedor-general{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.slogan-presentacion-web{
+    display: flex;
+    align-items: center;
+    margin: 50px;
+    gap: 10%;
+}
+
+.slogan-presentacion-web h2{
+    font-family: "Tan-Meringue";
+    color: #F75B2B;
+    font-size: 8.25rem;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9) ;
+}
+
+/*.slogan-presentacion-web button{
+    width: 150px;
+    height: 50px;
+    margin-left: 45%;
+    font-size: 1.5em;
+    font-family: "Tan-Meringue";
+    font-weight: 700;
+    border-radius: 40px;
+    color: #ffffff;
+    background-color: #F75B2B;
+}*/
+
+
+.slogan-presentacion-web img{
+    max-width: 500px;
+    max-height: 800px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.9) ;
+
+}
+
+
+.informacion-web{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*SEPARADOR*/
+.separador{
+    width: 50%;
+    border: 1px solid #000009;
+}
+
+
+
+/*QUIENES SOMOS*/
+
+.quienes-somos{
+    width: 50%;
+    text-align: center;
+}
+
+.quienes-somos h3{
+    font-family: "TAN-MERINGUE";
+    color: #F75B2B;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.quienes-somos p{
+    font-family: 'Monserrat';
+    font-size: 2em;
+    color: #000;
+    font-weight: 500;
+}
+
+/*DESTACADOS*/
+
+.destacados-container h4{
+    margin: 100px 0px;
+    font-family: "TAN-MERINGUE";
+    color: #F75B2B;
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+}
+
+
+/*----------FOOTER----------*/
+
+footer{
+    background-color: #070580;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+.contenedor-footer{
+    padding: 50px 50px;
+}
+
+.contenedor-footer h2{
+    font-family: "Tan-Meringue";
+    color: #F75B2B;
+}
+
+.contenedor-redesSociales ul{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: -30px;
+}
+
+.contenedor-redesSociales li{
+    list-style: none;
+}
+
+.contenedor-redesSociales i{
+    color: #ffffff;
+    font-size: 50px;
+    padding: 0px 10px;
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+    .slogan-presentacion-web{
+        margin: 25px;
+    }
+
+    .slogan-presentacion-web h2{
+        /*font-size: 10vw;*/
+        display: none;
+    }
+
+    .slogan-presentacion-web img{
+        width: 100%;
+    }
+
+    .quienes-somos h3{
+        font-size: 10vw;
+    }
+
+    .quienes-somos p{
+        font-size: 5vw;
+    }
+
+    
+}
+
+@media only screen and (max-width: 800px){
+
+
+    
+    .menu{
+        margin: auto;
+        position: absolute;
+        right: 5px;
+        
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    ul.menu {
+        display: none;
+        flex-direction: column;
+        width: 150px;
+        background: #070580;
+        border-radius: 10px;
+        padding: 0;
+    }
+    
+    ul.menu.active {
+        display: flex;
+    }
+    
+    ul.menu li {
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+
+

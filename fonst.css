@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Tan-Meringue";
+    src: url("fonts-meringue/TAN\ MERINGUE.ttf") format(trueType);
+}
+
+@font-face {
+    font-family: "Monserrat";
+    src: url(fonts/Montserrat-VariableFont_wght.ttf) format(trueType);
+}
