@@ -16,7 +16,7 @@ header {
     width: 100%;
     height:120px;
     background-color: #070580;
-    box-shadow: 0px 0px 40px #000;
+    
 
 }
 
@@ -24,7 +24,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    margin: 0px 50px;
+    
+    
 }
 
 /*.contenedor-header .portada{
@@ -37,15 +39,19 @@ header {
 .contenedor-header h1{
     font-family: "Tan-Meringue";
     color: #F75B2B;
+    font-size: 3em;
 }
 
+.contenedor-links{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
 
 
 .contenedor-links ul{
     display: flex;
-    align-items: center;
     list-style: none;
-
 }
 
 .contenedor-links li{
@@ -55,7 +61,7 @@ header {
 /*TAMAÑO LETRAS a*/
 
 .contenedor-links a{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     text-decoration: none;
     color: #ffffff;
     font-family: "Montserrat", sans-serif;
@@ -63,8 +69,11 @@ header {
 }
 
 .carrito-img{
-    width: 50px;
-    padding: 0;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    max-width: 40px;
+    margin-bottom: 15px;
 }
 
 .menu-toggle {
@@ -74,10 +83,10 @@ header {
 }
 
 .menu-toggle .hamburger {
-    width: 25px;
+    width: 35px;
     height: 5px;
     background-color: #fff;
-    margin: 6px 0;
+    margin: 3px 0;
 }
 
 /*----------MAIN----------*/
@@ -236,13 +245,17 @@ footer{
 }
 
 @media only screen and (max-width: 800px){
-
-
     
+    .logo{
+        margin: 40px auto;
+    }
+
+
     .menu{
         margin: auto;
         position: absolute;
-        right: 5px;
+        top: 120px;
+        right: 0;
         
     }
 
@@ -253,9 +266,9 @@ footer{
     ul.menu {
         display: none;
         flex-direction: column;
-        width: 150px;
-        background: #070580;
-        border-radius: 10px;
+        width: 100vw;
+        height: 100vh;
+        background: #59587b;
         padding: 0;
     }
     
@@ -268,6 +281,33 @@ footer{
         padding: 10px;
         text-align: center;
     }
+
+    /* Definición de la animación */
+    @keyframes slideInFromLeft {
+        0% {
+        transform: translateX(-100%); /* El elemento empieza fuera de la pantalla por la izquierda */
+        opacity: 0; /* El elemento empieza siendo invisible */
+        }
+        100% {
+        transform: translateX(0); /* El elemento llega a su posición original */
+        opacity: 1; /* El elemento es completamente visible */
+        }
+    }
+    
+    /* Aplicación de la animación al elemento */
+    .menu {
+        animation-name: slideInFromLeft; /* Nombre de la animación */
+        animation-duration: 1s; /* Duración de la animación */
+        animation-timing-function: ease-out; /* Función de temporización */
+        animation-fill-mode: forwards; /* Para que mantenga el estado final después de la animación */
+    }
+    
+    /* Estilos adicionales para el elemento (opcional) */
+    .menu {
+        position: absolute;
+        /* Otros estilos como background, padding, etc. */
+    }
+
 }
 
 
