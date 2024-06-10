@@ -3,20 +3,23 @@
 
 *{
     box-sizing: border-box;
+    scrollbar-width: none;
 }
 
 body{
     margin: 0;
     padding: 0;
-    background-color: #e5e5e5;
+    background-color:/* #212121*/ #ffffff;
 }
 
 /*----------HEADER----------*/
 header {
+    position: sticky;
+    top: 0;
+    left: 0;
     width: 100%;
     height:120px;
     background-color: #070580;
-    
 
 }
 
@@ -25,8 +28,6 @@ header {
     justify-content: space-between;
     align-items: center;
     margin: 0px 50px;
-    
-    
 }
 
 /*.contenedor-header .portada{
@@ -91,25 +92,27 @@ header {
 
 /*----------MAIN----------*/
 
+
+
 .contenedor-general{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-
 .slogan-presentacion-web{
     display: flex;
     align-items: center;
-    margin: 50px;
+    margin: 180px auto;
     gap: 10%;
+    
 }
 
 .slogan-presentacion-web h2{
     font-family: "Tan-Meringue";
     color: #F75B2B;
     font-size: 8.25rem;
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9) ;
+    font-weight: 700;
 }
 
 /*.slogan-presentacion-web button{
@@ -143,8 +146,8 @@ header {
 
 /*SEPARADOR*/
 .separador{
-    width: 50%;
-    border: 1px solid #000009;
+    width: 70%;
+    border: 1px solid rgb(0, 0, 0, 0.2);
 }
 
 
@@ -158,16 +161,16 @@ header {
 
 .quienes-somos h3{
     font-family: "TAN-MERINGUE";
-    color: #F75B2B;
+    color: rgb(247, 91, 43);
     font-weight: 700;
     font-size: 50px;
 }
 
 .quienes-somos p{
     font-family: 'Monserrat';
-    font-size: 2em;
-    color: #000;
-    font-weight: 500;
+    font-size: 1.5em;
+    color: rgb(0, 0, 0,0.7);
+    font-weight: 700;
 }
 
 /*DESTACADOS*/
@@ -181,19 +184,154 @@ header {
     text-align: center;
 }
 
+/*carrusel*/
+.carrousel-articulos-destacados{
+    
+
+}
+
+.contenedor-carrusel{
+    width: 90vw;
+    height: 500px;
+    background-color: #070580;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+/*cards*/
+.card {
+    --bg-card: #27272a;
+    --primary: #6d28d9;
+    --primary-800: #4c1d95;
+    --primary-shadow: #2e1065;
+    --light: #d9d9d9;
+    --zinc-800: #18181b;
+    --bg-linear: linear-gradient(0deg, var(--primary) 50%, var(--light) 125%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    width: 50%;
+    height: 450px;
+    background-color: var(--bg-card);
+    border-radius: 10px;
+}
+
+.image_container {
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: 50%;
+    background-color: var(--primary-800);
+    border-radius: 10px;
+}
+
+.image_container .image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    fill: var(--light);
+}
+
+.title {
+    overflow: clip;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--light);
+    text-transform: capitalize;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+}
+
+.size {
+    font-size: 1rem;
+    color: var(--light);
+}
+
+.list-size {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5%;
+    margin-top: 20px;
+}
+
+.list-size .item-list {
+    list-style: none;
+}
+
+.list-size .item-list-button {
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--zinc-800);
+    font-size: 0.75rem;
+    color: var(--light);
+    border: 2px solid var(--zinc-800);
+    border-radius: 0.25rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.item-list-button:hover {
+    border: 2px solid var(--light);
+}
+
+.item-list-button:focus {
+    background-color: var(--primary);
+    border: 2px solid var(--primary-shadow);
+    box-shadow: inset 0px 1px 4px var(--primary-shadow);
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--light);
+}
+
+.cart-button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    width: 100%;
+    background-image: var(--bg-linear);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--light);
+    text-wrap: nowrap;
+    border: 2px solid hsla(262, 83%, 58%, 0.5);
+    border-radius: 0.5rem;
+    box-shadow: inset 0 0 0.25rem 1px var(--light);
+}
+.cart-button .cart-icon {
+    width: 1rem;
+}
 
 /*----------FOOTER----------*/
 
 footer{
     background-color: #070580;
     width: 100%;
+    height: 120px;
     position: relative;
     bottom: 0;
 }
 
-.contenedor-footer{
-    padding: 50px 50px;
-}
+
 
 .contenedor-footer h2{
     font-family: "Tan-Meringue";
@@ -221,7 +359,7 @@ footer{
 @media only screen and (max-width: 1200px) {
 
     .slogan-presentacion-web{
-        margin: 25px;
+        margin: 50px;
     }
 
     .slogan-presentacion-web h2{
@@ -245,7 +383,11 @@ footer{
 }
 
 @media only screen and (max-width: 800px){
-    
+
+    .contenedor-header{
+        margin: 0 20px;
+    }
+
     .logo{
         margin: 40px auto;
     }
@@ -253,33 +395,42 @@ footer{
 
     .menu{
         margin: auto;
-        position: absolute;
-        top: 120px;
-        right: 0;
-        
+        position: relative;
+        top: 119px;
+        left: 0;
+        padding: 20px;
     }
 
     .menu-toggle {
         display: flex;
+        
     }
 
     ul.menu {
         display: none;
         flex-direction: column;
-        width: 100vw;
+        width: 50vw;
         height: 100vh;
-        background: #59587b;
-        padding: 0;
+        background: rgb(7, 5, 128, 1);
+        border-right: 3px solid rgba(255, 255, 255, 0.8);   
     }
     
     ul.menu.active {
         display: flex;
     }
+
     
     ul.menu li {
-        margin: 0;
-        padding: 10px;
-        text-align: center;
+        margin: 40px 0;
+        padding: 0;
+    }
+
+    .menu a{
+        
+        text-align: start;
+        padding: 5px 0;
+        font-size: 1rem;
+        
     }
 
     /* Definición de la animación */
@@ -293,7 +444,7 @@ footer{
         opacity: 1; /* El elemento es completamente visible */
         }
     }
-    
+
     /* Aplicación de la animación al elemento */
     .menu {
         animation-name: slideInFromLeft; /* Nombre de la animación */
@@ -307,6 +458,7 @@ footer{
         position: absolute;
         /* Otros estilos como background, padding, etc. */
     }
+
 
 }
 
