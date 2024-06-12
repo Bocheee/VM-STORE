@@ -1,6 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+
 *{
     box-sizing: border-box;
     scrollbar-width: none;
@@ -27,7 +29,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0px 50px;
+    margin: 0 50px;
 }
 
 /*.contenedor-header .portada{
@@ -186,18 +188,23 @@ header {
 
 /*carrusel*/
 .carrousel-articulos-destacados{
-    
-
+    max-width: 80%;
+    overflow: hidden;
 }
 
 .contenedor-carrusel{
-    width: 90vw;
+    width: 100vw;
     height: 500px;
-    background-color: #070580;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5%;
+    gap: 90px;
+    transition: transform 1s ease-in-out;
+
+}
+
+.hidden {
+    display: none;
 }
 
 /*cards*/
@@ -209,32 +216,34 @@ header {
     --light: #d9d9d9;
     --zinc-800: #18181b;
     --bg-linear: linear-gradient(0deg, var(--primary) 50%, var(--light) 125%);
-    position: relative;
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    padding: 30px;
-    width: 50%;
+    align-items: center;
+    flex: 1 0 15%;
+    padding: 30px 50px;
+    width: 600px;
     height: 450px;
     background-color: var(--bg-card);
     border-radius: 10px;
+    cursor: pointer;
+
 }
 
 .image_container {
     overflow: hidden;
     cursor: pointer;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 5;
     width: 100%;
     height: 50%;
-    background-color: var(--primary-800);
     border-radius: 10px;
+    box-sizing: border-box;
 }
 
-.image_container .image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.image_container img {
     width: 100%;
     fill: var(--light);
 }
@@ -259,8 +268,15 @@ header {
     display: flex;
     justify-content: start;
     align-items: center;
+    width: 100%;
     gap: 5%;
     margin-top: 20px;
+}
+
+ul.list-size{
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .list-size .item-list {
@@ -274,7 +290,7 @@ header {
     font-size: 0.75rem;
     color: var(--light);
     border: 2px solid var(--zinc-800);
-    border-radius: 0.25rem;
+    border-radius: 10px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -291,7 +307,7 @@ header {
 .action {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 50px;
 }
 
 .price {
@@ -305,8 +321,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.25rem;
-    padding: 0.5rem;
+    gap: 10px;
+    padding: 10px;
     width: 100%;
     background-image: var(--bg-linear);
     font-size: 0.75rem;
@@ -314,11 +330,24 @@ header {
     color: var(--light);
     text-wrap: nowrap;
     border: 2px solid hsla(262, 83%, 58%, 0.5);
-    border-radius: 0.5rem;
-    box-shadow: inset 0 0 0.25rem 1px var(--light);
+    border-radius: 10px;
 }
 .cart-button .cart-icon {
-    width: 1rem;
+    width: 20px;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+.button {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
 /*----------FOOTER----------*/
@@ -426,11 +455,18 @@ footer{
     }
 
     .menu a{
-        
         text-align: start;
         padding: 5px 0;
         font-size: 1rem;
         
+    }
+
+    .carrousel-articulos-destacados{
+        width: 80%;
+    }
+
+    .card{
+        width: 50%;
     }
 
     /* Definición de la animación */
