@@ -71,6 +71,12 @@ header {
     font-weight: 700;
 }
 
+.contenedor-links .close-hamburguesa{
+    display: none;
+    font-size: 50px;
+    cursor: pointer;
+}
+
 .carrito-img{
     display: flex;
     justify-content: end;
@@ -102,10 +108,11 @@ header {
     align-items: center;
 }
 
+
 .slogan-presentacion-web{
     display: flex;
     align-items: center;
-    margin: 180px auto;
+    margin: 80px auto;
     gap: 10%;
     
 }
@@ -131,7 +138,7 @@ header {
 
 
 .slogan-presentacion-web img{
-    max-width: 500px;
+    max-width: 800px;
     max-height: 800px;
     border-radius: 30px;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.9) ;
@@ -398,6 +405,7 @@ footer{
 
     .slogan-presentacion-web img{
         width: 100%;
+        border-radius: 0;
     }
 
     .quienes-somos h3{
@@ -413,9 +421,26 @@ footer{
 
 @media only screen and (max-width: 800px){
 
-    .contenedor-header{
-        margin: 0 20px;
+.contenedor-links .close-hamburguesa{
+    display: flex;
+    justify-content: end;
+    color: #FFFFFF;
+    
+
+}
+
+    .main-presentacion{
+        margin: 0;
+        padding: 0;
+        width: 100%;
     }
+
+    .slogan-presentacion-web{
+        margin: 0;
+        margin-bottom: 5%;
+    }
+
+    
 
     .logo{
         margin: 40px auto;
@@ -436,7 +461,8 @@ footer{
     }
 
     ul.menu {
-        display: none;
+        transition: 1.5s ease;
+        left: -100%;
         flex-direction: column;
         width: 50vw;
         height: 100vh;
@@ -445,6 +471,8 @@ footer{
     }
     
     ul.menu.active {
+        transition: 1.5s ease;
+        left: 0;
         display: flex;
     }
 
@@ -469,31 +497,24 @@ footer{
         width: 50%;
     }
 
-    /* Definición de la animación */
-    @keyframes slideInFromLeft {
-        0% {
-        transform: translateX(-100%); /* El elemento empieza fuera de la pantalla por la izquierda */
-        opacity: 0; /* El elemento empieza siendo invisible */
-        }
-        100% {
-        transform: translateX(0); /* El elemento llega a su posición original */
-        opacity: 1; /* El elemento es completamente visible */
-        }
-    }
+   
 
-    /* Aplicación de la animación al elemento */
-    .menu {
-        animation-name: slideInFromLeft; /* Nombre de la animación */
-        animation-duration: 1s; /* Duración de la animación */
-        animation-timing-function: ease-out; /* Función de temporización */
-        animation-fill-mode: forwards; /* Para que mantenga el estado final después de la animación */
-    }
-    
-    /* Estilos adicionales para el elemento (opcional) */
+
+
     .menu {
         position: absolute;
+        animation-fill-mode: forwards;
         /* Otros estilos como background, padding, etc. */
     }
+    
+    .menu.active {
+        animation-name: slideInFromLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    }
+    
+    
+    
 
 
 }

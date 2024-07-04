@@ -8,13 +8,16 @@ ScrollReveal().reveal('.main-presentacion', {
 /*menu hamburguesa*/
 
 document.addEventListener('DOMContentLoaded', function() {
-    var menuToggle = document.getElementById('menu-toggle');
-    var menu = document.getElementById('menu');
-  
+    let menuToggle = document.getElementById('menu-toggle');
+    let menu = document.getElementById('menu');
+    
+
     menuToggle.addEventListener('click', function() {
-      menu.classList.toggle('active');
+    menu.classList.toggle('active');
     });
 });
+
+
 
 /*carrusel*/
 /*
