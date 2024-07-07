@@ -10,7 +10,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color:/* #212121*/ #ffffff;
+    background-color:/* #212121*/ rgb(255, 255, 255);
 }
 
 /*----------HEADER----------*/
@@ -163,8 +163,25 @@ header {
 /*QUIENES SOMOS*/
 
 .quienes-somos{
-    width: 50%;
+    
     text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quienes-somos .contenedor-quienes-somos{
+    width: 50%;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 10px;
+}
+
+.quienes-somos .contenedor-quienes-somos img{
+    width: 80%;
+    height: 80%;
 }
 
 .quienes-somos h3{
@@ -175,9 +192,10 @@ header {
 }
 
 .quienes-somos p{
+    text-align: center;
     font-family: 'Monserrat';
-    font-size: 1.5em;
-    color: rgb(0, 0, 0,0.7);
+    font-size: 20px;
+    color: rgb(0, 0, 0);
     font-weight: 700;
 }
 
@@ -194,67 +212,64 @@ header {
 
 /*carrusel (es el contenedor de las cards)*/
 .carrousel-articulos-destacados{
-    max-width: 80vw;
-    padding: 20px;
+    width: 80vw;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
     gap: 20px;
+    margin: 50px;
     
 }
 
 /*cards*/
 .card{
     width: 500px;
-    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(54, 51, 51, 0.3);
-    border-radius: 30px;
-    
-    
 
 }
 
 
 
 .card img{
-    width: 100%;
-    height: 70%;
-    border-radius: 30px;
+    width: 250px;
+    height: 300px;
+  
 }
 
 .contenedor-detalles-card{
     margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    width: 100%;
+    
 }
 
 .card .nombre-prod{
-    color: #000;
+    color: rgb(0, 0, 0, 0.7);
     font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-size: 15px;
 }
 
 .card .precio-produc-card{
-    font-family:  sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-size: 20px;
 }
 
 .card .btn-compra{
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
     padding: 10px;
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 50px;
     background: #070580;
     border: none;
     color: #FFFFFF;
+    width: 100px;
+    justify-self: center;
 }
 
 .card .container-colores{
@@ -339,7 +354,7 @@ footer{
     }
 
     .quienes-somos h3{
-        font-size: 10vw;
+        font-size: 30px;
     }
 
     .quienes-somos p{
@@ -377,7 +392,7 @@ footer{
     }
 
     .quienes-somos p{
-        font-size: 13px;
+        font-size: 10%;
     }
 
 
@@ -426,16 +441,25 @@ footer{
     
     /*CARD Y CONTENEDOR*/
     .carrousel-articulos-destacados{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        
-        
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        width: 90%;
+        height: 400px;
+        overflow-x: scroll;
+
     }
 
     .card{
-        width: 100%;
+        width: 200px;
+        height: 400px;
     }
+
+    .card img{
+        width: 200px;
+        height: 300px;
+    }
+
+    
 
 
 
