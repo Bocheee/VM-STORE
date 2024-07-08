@@ -179,9 +179,15 @@ header {
     gap: 0 10px;
 }
 
-.quienes-somos .contenedor-quienes-somos img{
+/* .quienes-somos .contenedor-quienes-somos img{
     width: 80%;
     height: 80%;
+
+} */
+.quienes-somos-imagen{
+    background-image: url("IMG/IMAGEN.jpg");
+    background-size: 80% 80%;
+    background-position: center;
 }
 
 .quienes-somos h3{
@@ -390,11 +396,39 @@ footer{
     .logo{
         margin: 40px auto;
     }
+    .quienes-somos-texto {
+        width: 180px;
 
-    .quienes-somos p{
-        font-size: 10%;
     }
+    .quienes-somos p{
+        font-size: 50%;
+        
+    }
+    .quienes-somos-imagen {  
+        width:150px;
+        background-image: url("IMG/IMAGEN.jpg");
+        background-size:100% 500px;
+        background-position: center;
 
+    }
+ 
+/*  */
+/*QUIENES SOMOS*/
+
+.quienes-somos{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    margin-left: 5%;
+    flex-direction: column;
+}
+
+
+
+
+
+
+/*  */
 
     .menu{
         margin: auto;
