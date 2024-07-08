@@ -436,7 +436,10 @@ footer{
     }
 
     ul.menu {
-        display: none;
+        transition: 3s ease;
+        /* left: -220px; */
+        left: -220px;
+        /* display: none; */
         flex-direction: column;
         width: 50vw;
         height: 100vh;
@@ -445,6 +448,8 @@ footer{
     }
     
     ul.menu.active {
+        transition: 2s ease;
+        left: 0px;
         display: flex;
     }
 
