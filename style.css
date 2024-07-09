@@ -235,8 +235,7 @@ header {
 
 /*DESTACADOS*/
 
-.destacados-container h4{
-    margin: 50px 0px;
+.articulos-destacados h3{
     font-family: "TAN-MERINGUE";
     color: #F75B2B;
     font-weight: 700;
@@ -248,10 +247,11 @@ header {
 .carrousel-articulos-destacados{
     width: 80vw;
     display: flex;
+    align-items: center;
     gap: 20px;
     margin: 50px;
     overflow: scroll;
-    
+    padding: 50px;
 }
 
 /*cards*/
@@ -261,7 +261,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: solid 2px rgb(0, 0, 0, 0.1);
+    border: solid 1px rgb(0, 0, 0, 0.1);
     border-radius: 20px;
     transition: transform 0.3s ease;
 }
@@ -274,7 +274,6 @@ header {
 
 .card img{
     width: 100%;
-    height: 300px;
     border-radius: 20px;
 }
 
@@ -345,28 +344,24 @@ header {
 /*----------FOOTER----------*/
 
 footer{
-    background-color: #070580;
-    width: 100vw;
+    background-color: rgb(7, 5, 128);
+    width: 100%;
     position: relative;
     bottom: 0;
-    
+    left: 0;
 }
 
-
-
-
-
-.contenedor-footer p{
+.contenedor-footer h3{
     font-family: "Tan-Meringue";
     color: #F75B2B;
-    font-size: 30px;
+    font-size: 25px;
 }
+
 
 .contenedor-redesSociales ul{
     display: flex;
     justify-content: end;
-    align-items: center;
-    gap: 10px;
+    gap: 0 10px;
 }
 
 .contenedor-redesSociales li{
@@ -402,6 +397,10 @@ footer{
 
     .quienes-somos p{
         font-size: 30px;
+    }
+
+    .articulos-destacados h3{
+        font-size: 31px;
     }
 
     
@@ -506,24 +505,24 @@ ul.menu li {
 
 /*CARD Y CONTENEDOR*/
 .carrousel-articulos-destacados{
+    padding: 0;
     display: grid;
-    grid-template-columns: repeat(1, 1fr 1fr);
+    grid-template-columns: repeat(1, 1fr);
     justify-self: center;
-    width: 95%;
+    width: 70%;
     overflow: visible;
-    
 
 }
 
 .card{
     width: 100%;
-    height: 400px;
 }
 
-.card img{
-    width: 100%;
-    height: 300px;
+.card:hover{
+    transform: none;
 }
+
+
 
 
 
