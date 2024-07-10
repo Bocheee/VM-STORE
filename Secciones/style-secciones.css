@@ -102,12 +102,57 @@ header {
 
 /*TERMINA HEADER*/
 
+/*CONTENEDOR BODY*/
 .contenedor-general{
-    height: 100vh;
+    min-height: 100vh; /*aca si le ponemos min-height, el contenedor del carrito falla, para que el contenedor del carrito de vea bien tenemos que poner height, corregir*/
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+/*CONTENEDOR SECCIONES*/
+
+/*CONTENEDOR DE LAS SECCIONES PANTALONES, BUZOS, REMERAS Y ACCESORIOS*/
+.contenedor-card{
+    margin: 100px 0;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 50px;
+}
+
+
+/*TERMINA EL CONTENEDOR DE LAS SECCIONES*/
+
+
+/*CONTENEDOR DE LA SECCION DE COMPRAS*/
+
+/*SECCIONES*/
+
+.contenedor-compras{
+    margin: auto;
+    width: 70%;
+    min-height: 70%;
+    text-align: center;
+    box-shadow: 0 0 100px 0px #232323;
+    border-radius: 20px;
+}
+
+.contenedor-compras p{
+    color: #F75B2B;
+    font-family: "Monserrat";
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+}
+
+
+/*TERMINA SECCIONES*/
+
+/*TERMINA LA SECCION DEL CONTENEDOR DE COMPRAS*/
+
+/*TERMINA EL CONTENEDOR DE SECCIONES*/
 
 
 /*-----CARDS-----*/
@@ -286,17 +331,3 @@ footer h3{
 }
 
 /*TERMINA FOOTER*/
-
-/*SECCIONES*/
-
-.contenedor-card{
-    margin: 100px 0;
-    width: 70%;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 50px;
-}
-
-
-/*TERMINA SECCIONES*/
