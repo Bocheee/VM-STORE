@@ -116,12 +116,12 @@ header {
 /*CONTENEDOR SECCIONES*/
 
 /*CONTENEDOR DE LAS SECCIONES PANTALONES, BUZOS, REMERAS Y ACCESORIOS*/
-.contenedor-filtros-nombre{
+.contenedor-general-filtros{
     margin: 20px;
     width: 300px;
 }
 
-.contenedor-filtros-nombre p{
+.contenedor-general-filtros p{
     color: #000;
     font-family: "Source Sans 3", sans-serif;
     font-weight: 800;
@@ -132,19 +132,20 @@ header {
 .expandible{
     width: 200px;
     height: 30px;
-    transition: height 0.3s ease;
+    transition: all 0.3s ease;
     background: #23232f;
     border-radius: 10px;
     cursor: pointer;
-    
+    margin-bottom: 30px;
+    position: relative;
 }
 
 .expandible.expande{
-    height: 200px;
+    height: 220px;
 }
 
 .expandible p{
-    margin: 30px 10px;
+    margin: 5px 10px;
     color: #FFFFFF;
     font-family: "Source Sans 3", sans-serif;
     font-weight: 800;
@@ -152,6 +153,41 @@ header {
     text-align: start;
     
 }
+
+.expandible .contenedor-filtros-main {
+    overflow: hidden;
+    height: 0;
+    transition: height 0.3s ease;
+
+
+}
+
+.expandible .contenedor-filtros-precio {
+    overflow: hidden;
+    height: 0;
+    transition: height 0.3s ease;
+    margin: 50px 0;
+
+
+}
+
+.expandible.expande .contenedor-filtros-precio{
+    height: 100px;
+}
+
+.expandible.expande .contenedor-filtros-main{
+    height: 180px;
+}
+
+.contenedor-filtros-main input[type="checkbox"]{
+    margin: 0 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10%;
+    background: #c72b2b;
+    border: none;
+}
+
 
 .contenedor-card{
     max-width: 80%;
