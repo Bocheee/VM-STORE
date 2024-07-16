@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 *{
     scrollbar-width: none;
@@ -102,24 +102,65 @@ header {
 
 /*TERMINA HEADER*/
 
+
+
 /*CONTENEDOR BODY*/
 .contenedor-general{
-    min-height: 100vh; /*aca si le ponemos min-height, el contenedor del carrito falla, para que el contenedor del carrito de vea bien tenemos que poner height, corregir*/
+    max-width: 95%;
+    max-height: 100%; /*aca si le ponemos min-height, el contenedor del carrito falla, para que el contenedor del carrito de vea bien tenemos que poner height, corregir*/
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 0 auto;
+    
 }
 
 /*CONTENEDOR SECCIONES*/
 
 /*CONTENEDOR DE LAS SECCIONES PANTALONES, BUZOS, REMERAS Y ACCESORIOS*/
+.contenedor-filtros-nombre{
+    margin: 20px;
+    width: 300px;
+}
+
+.contenedor-filtros-nombre p{
+    color: #000;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+}
+
+
+.expandible{
+    width: 200px;
+    height: 30px;
+    transition: height 0.3s ease;
+    background: #23232f;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+.expandible.expande{
+    height: 200px;
+}
+
+.expandible p{
+    margin: 30px 10px;
+    color: #FFFFFF;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    text-align: start;
+    
+}
+
 .contenedor-card{
-    margin: 100px 0;
-    width: 70%;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 50px;
+    max-width: 80%;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    
 }
 
 
@@ -162,9 +203,8 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: solid 1px rgb(0, 0, 0, 0.1);
-    border-radius: 20px;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .card:hover{
@@ -179,66 +219,38 @@ header {
 .contenedor-detalles-card{
     margin-bottom: 20px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    text-align: center;
+    grid-template-columns: repeat(1, 1fr);
     width: 100%;
 }
 
 .card .nombre-prod{
     color: rgb(0, 0, 0, 0.7);
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-    font-size: 15px;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 800;
+    font-size: 20px;
 }
 
 .card .precio-produc-card{
-    font-family: "Roboto", sans-serif;
+    font-family: "Source Sans 3", sans-serif;
     font-weight: 700;
     font-size: 20px;
 }
 
 .card .btn-compra{
-    font-family: "Roboto", sans-serif;
+    position: relative;
+    bottom: 50px;
+    font-family: "Source Sans 3", sans-serif;
     font-weight: 700;
     padding: 10px;
     font-size: 15px;
-    border-radius: 50px;
+    border-radius: 30px;
     background: #070580;
     border: none;
     color: #FFFFFF;
     width: 100px;
-    justify-self: center;
+    justify-self: end;
 }
 
-.card .container-colores{
-    width: 100px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10%;
-}
-
-.container-colores .color1{
-    width: 20px;
-    height: 20px;
-    background-color: #F75B2B;
-    border-radius: 100%;
-}
-
-.container-colores .color2{
-    width: 20px;
-    height: 20px;
-    background-color: #070580;
-    border-radius: 100%;
-}
-
-.container-colores .color3{
-    width: 20px;
-    height: 20px;
-    background-color: #ee0101;
-    border-radius: 100%;
-}
 
 /*-----TERMINA DESTACADOS-----*/
 
@@ -331,3 +343,195 @@ footer h3{
 }
 
 /*TERMINA FOOTER*/
+
+
+
+@media only screen and (max-width: 1200px) {
+
+    .slogan-presentacion-web{
+        margin: 50px;
+    }
+
+    .slogan-presentacion-web h2{
+        /*font-size: 10vw;*/
+        display: none;
+    }
+
+    .slogan-presentacion-web img{
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .quienes-somos h3{
+        font-size: 30px;
+    }
+
+    .quienes-somos p{
+        font-size: 30px;
+    }
+
+    .articulos-destacados h3{
+        font-size: 31px;
+    }
+
+    
+}
+
+@media only screen and (max-width: 800px){
+
+    header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height:120px;
+        background-color: #070580;
+        z-index: 2000;
+    
+    }
+
+.contenedor-links .close-hamburguesa{
+    display: flex;
+    justify-content: end;
+    color: #FFFFFF;
+    
+
+}
+
+.main-presentacion{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.slogan-presentacion-web{
+    margin: 0;
+    margin-bottom: 5%;
+}
+
+.logo{
+    margin: 40px auto;
+}
+
+.quienes-somos p{
+    font-size: 15px;
+}
+
+
+.quienes-somos{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.quienes-somos .contenedor-quienes-somos{
+    justify-self: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    
+}
+
+.quienes-somos .contenedor-secciones{
+    width: 100%;
+}
+
+.menu{
+    margin: auto;
+    position: relative;
+    top: 119px;
+    left: 0;
+    padding: 20px;
+}
+
+.menu-toggle {
+    display: flex;
+    
+}
+
+ul.menu {
+    transition: 1.5s ease;
+    left: -100%;
+    flex-direction: column;
+    width: 50vw;
+    height: 100vh;
+    background: rgb(7, 5, 128, 1);
+    border-right: 3px solid rgba(255, 255, 255, 0.8);   
+}
+
+ul.menu.active {
+    transition: 1.5s ease;
+    left: 0;
+    display: flex;
+}
+
+
+ul.menu li {
+    margin: 40px 0;
+    padding: 0;
+}
+
+.menu a{
+    text-align: start;
+    padding: 5px 0;
+    font-size: 1rem;
+    
+}
+
+
+/*CARD Y CONTENEDOR*/
+.carrousel-articulos-destacados{
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-self: center;
+    width: 70%;
+    overflow: visible;
+    margin: 0 auto;
+
+}
+
+.card{
+    width: 100%;
+}
+
+.card:hover{
+    transform: none;
+}
+
+.menu {
+    position: absolute;
+    animation-fill-mode: forwards;
+}
+
+.menu.active {
+    animation-name: slideInFromLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+/*FOOTER*/
+
+.contenedor-footer{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    
+    
+}
+
+.contenedor-pagos p{
+    width: 150px;
+}
+
+.contenedor-redes-sociales p{
+    width: 150px;
+}
+
+}
+
+
+
