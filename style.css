@@ -446,6 +446,18 @@ footer h3{
     
     }
 
+    .contenedor-links{
+        width: 100%;
+        display: flex;
+    }
+
+    .contenedor-links h1{
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 30px auto;
+    }
+
 .contenedor-links .close-hamburguesa{
     display: flex;
     justify-content: end;
