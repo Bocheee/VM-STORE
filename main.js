@@ -17,6 +17,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const expandible = document.querySelectorAll(".expandible");
+
+    expandible.forEach(expandible =>{
+        expandible.addEventListener("click", function(){ 
+            if (expandible.classList.contains("expande")){
+                expandible.classList.remove("expande");
+                expandible.classList.add("contenedor-filtros");
+            
+            }else{
+                expandible.classList.remove("contenedor-filtros");
+                expandible.classList.add("expande");
+            }
+        });
+    });
+});
+
 
 
 /*carrusel*/
