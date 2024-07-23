@@ -111,6 +111,8 @@ header {
 /*CONTENEDOR SECCIONES*/
 
 /*CONTENEDOR DE LAS SECCIONES PANTALONES, BUZOS, REMERAS Y ACCESORIOS*/
+
+
 .contenedor-general-filtros{
     margin: 20px;
     width: 300px;
@@ -404,6 +406,8 @@ footer h3{
 
 @media only screen and (max-width: 800px){
 
+    /*EMPIEZA HEADER*/
+    
     header {
         position: sticky;
         top: 0;
@@ -414,6 +418,8 @@ footer h3{
         z-index: 1000;
     
     }
+
+    
 
 
     .contenedor-links{
@@ -434,6 +440,16 @@ footer h3{
         justify-content: end;
         color: #FFFFFF;
     }
+
+    /*TERMINA HEADER*/
+
+    /*Contenedor pirncipal*/
+    .contenedor-general{
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* termina Contenedor pirncipal*/
 
     .main-presentacion{
         margin: 0;
@@ -564,7 +580,16 @@ footer h3{
         width: 150px;
     }
 
+    /*FILTROS Y CARDS*/
+    
+
+    .contenedor-card{
+        margin: 0 auto;
     }
+
+
+    /*TERMINA FILTROS Y CARD*/
+}
 
 
 
