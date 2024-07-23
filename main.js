@@ -1,8 +1,4 @@
-ScrollReveal().reveal('.main-presentacion', {
-    delay: 375,
-    duration: 500,
-    reset: true
-});
+
 
 
 /*menu hamburguesa*/
@@ -16,6 +12,23 @@ document.addEventListener('DOMContentLoaded', function() {
     menu.classList.toggle('active');
     });
 });
+
+/*TERMINA EL MENU HAMBURGUESA*/
+
+/* CARRITO TOGGLE */
+
+document.addEventListener('DOMContentLoaded', function(){
+    let carritoTogle = document.getElementById('carrito-toggle');
+    let menuCarrito = document.getElementById('menu-toggle-carrito');
+
+    carritoTogle.addEventListener('click', function(){
+        menuCarrito.classList.toggle('active');
+    });
+});
+
+/* TERMINA EL CARRITO */
+
+/*FILTROS*/
 
 document.addEventListener("DOMContentLoaded", function() {
     const expandible = document.querySelectorAll(".expandible");
@@ -34,87 +47,79 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const carrito = [];
+    const carritoItems = document.getElementById('carrito-items');
+    const carritoTotal = document.getElementById('carrito-total');
 
+    document.querySelectorAll('.btn-add').forEach(button => {
+        button.addEventListener('click', () => {
+            const card = button.closest('.card');
+            const id = card.getAttribute('data-id');
+            const name = card.getAttribute('data-name');
+            const price = parseFloat(card.getAttribute('data-price'));
 
-/*carrusel*/
-/*
-const track = document.querySelector('.contenedor-carrusel');
-        const cards = Array.from(track.children);
-        const nextButton = document.querySelector('#nextBtn');
-        const prevButton = document.querySelector('#prevBtn');
-
-        const cardWidth = cards[0].getBoundingClientRect().width;
-        let currentIndex = 0;
-
-        nextButton.addEventListener('click', () => {
-            currentIndex++;
-            if (currentIndex >= cards.length / 2) {
-                track.style.transition = 'none';
-                track.style.transform = `translateX(0px)`;
-                currentIndex = 0;
-                setTimeout(() => {
-                    track.style.transition = 'transform 0.6s ease-in-out';
-                    track.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
-                }, 0);
+            const productIndex = carrito.findIndex(item => item.id === id);
+            if (productIndex !== -1) {
+                carrito[productIndex].quantity += 1;
             } else {
-                track.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
+                carrito.push({ id, name, price, quantity: 1 });
             }
+
+            renderCarrito();
         });
-
-        prevButton.addEventListener('click', () => {
-            currentIndex--;
-            if (currentIndex < 0) {
-                track.style.transition = 'none';
-                track.style.transform = `translateX(-${cardWidth * (cards.length / 2 - 1)}px)`;
-                currentIndex = cards.length / 2 - 1;
-                setTimeout(() => {
-                    track.style.transition = 'transform 0.5s ease-in-out';
-                    track.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
-                }, 0);
-            } else {
-                track.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
-            }
-        });
-*/
-
-let currentIndex = 0;
-
-function showCards() {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach((card, index) => {
-        if (index >= currentIndex && index < currentIndex + 4) {
-            card.classList.remove('hidden');
-        } else {
-            card.classList.add('hidden');
-        }
     });
-}
 
-function next() {
-    const cards = document.querySelectorAll('.card');
-    if (currentIndex + 4 < cards.length) {
-        currentIndex++;
+    function renderCarrito() {
+        carritoItems.innerHTML = '';
+        let total = 0;
+
+        carrito.forEach(product => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                ${product.name} - $${product.price} x ${product.quantity}
+                <button class="btn-remove" data-id="${product.id}">Eliminar</button>
+                <button class="btn-increase" data-id="${product.id}">+</button>
+                <button class="btn-decrease" data-id="${product.id}">-</button>
+            `;
+            carritoItems.appendChild(li);
+
+            total += product.price * product.quantity;
+        });
+
+        carritoTotal.textContent = total;
+
+        document.querySelectorAll('.btn-remove').forEach(button => {
+            button.addEventListener('click', () => {
+                const id = button.getAttribute('data-id');
+                const productIndex = carrito.findIndex(item => item.id === id);
+                if (productIndex !== -1) {
+                    carrito.splice(productIndex, 1);
+                }
+                renderCarrito();
+            });
+        });
+
+        document.querySelectorAll('.btn-increase').forEach(button => {
+            button.addEventListener('click', () => {
+                const id = button.getAttribute('data-id');
+                const productIndex = carrito.findIndex(item => item.id === id);
+                if (productIndex !== -1) {
+                    carrito[productIndex].quantity += 1;
+                }
+                renderCarrito();
+            });
+        });
+
+        document.querySelectorAll('.btn-decrease').forEach(button => {
+            button.addEventListener('click', () => {
+                const id = button.getAttribute('data-id');
+                const productIndex = carrito.findIndex(item => item.id === id);
+                if (productIndex !== -1 && carrito[productIndex].quantity > 1) {
+                    carrito[productIndex].quantity -= 1;
+                }
+                renderCarrito();
+            });
+        });
     }
-    showCards();
-}
-
-function prev() {
-    if (currentIndex > 0) {
-        currentIndex--;
-    }
-    showCards();
-}
-
-document.addEventListener('DOMContentLoaded', showCards);
-
-/* 
-document.addEventListener('scroll', function() {
-  const section = document.getElementById('header');
-  if (window.scrollY > 100) { // Puedes ajustar este valor según tus necesidades
-      section.style.opacity = '0';
-      section.style.visibility = 'hidden';
-  } else {
-      section.style.opacity = '3';
-      section.style.visibility = 'visible';
-  }
-});*/
+});

@@ -39,6 +39,8 @@ header {
     padding: 0 50px;
 }*/
 
+/*MENU HAMBURGUESA*/
+
 .contenedor-links h1 a{
     font-family: "Tan-Meringue";
     color: #F75B2B;
@@ -78,13 +80,7 @@ header {
     cursor: pointer;
 }
 
-.carrito-img{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    max-width: 40px;
-    margin-bottom: 15px;
-}
+
 
 .menu-toggle {
     display: none;
@@ -92,12 +88,110 @@ header {
     cursor: pointer;
 }
 
-.menu-toggle .hamburger {
+.menu-toggle .hamburguer {
     width: 35px;
     height: 5px;
     background-color: #fff;
     margin: 3px 0;
 }
+
+/*TERMINA MENU HAMBURGUESA*/
+
+
+/*CARRITO */
+
+.carrito-img{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    max-width: 40px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.menu-carrito{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*TODO ESTO ES EL MENU DEL CARRITO DESPLEGABLE*/
+.menu-toggle-carrito{
+    margin: auto;
+    position: relative;
+    top: 119px;
+    right: 0;
+    
+}
+
+/*ACTIVADOR*/
+.menu-toggle-carrito {
+    position: absolute;
+    animation-fill-mode: forwards;
+}
+
+.menu-toggle-carrito {
+    transition: 1.5s ease;
+    right: -100%;
+    flex-direction: column;
+    width: 30% ;
+    height: 100vh;
+    background: rgb(7, 5, 128, 1);
+    border-left: 3px solid rgba(255, 255, 255, 0.8);   
+}
+
+.menu-toggle-carrito.active {
+    transition: 1.5s ease;
+    right: 0;
+    display: flex;
+}
+
+/*ESTILOS DENTRO DEL CARRITO*/
+
+.menu-toggle-carrito{
+    padding: 0 20px;
+}
+
+.contenedor-items-carrito{
+    width: 100%;
+    height: 50%;
+    margin: 100px auto;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.contenedor-items-carrito .parrafo-carrito{
+    text-align: center;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+#carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+}
+
+ul.carrito-items{
+    background-color: #F75B2B;
+    width: 100%;
+}
+
+.btn-remove{
+    background-color: #070580;
+}
+
+
+/*TERMINA EL MENU DEL CARRITO*/
+
+
+
 
 /*TERMINA HEADER*/
 
@@ -181,6 +275,7 @@ header {
 .quienes-somos .contenedor-secciones img{
     width: 100%;
     height: 100%;
+    
 }
 
 .quienes-somos .contenedor-secciones::after {
@@ -294,6 +389,7 @@ header {
     color: #FFFFFF;
     width: 100px;
     justify-self: end;
+    cursor: pointer;
 }
 
 /*-----TERMINA DESTACADOS-----*/
@@ -442,7 +538,7 @@ footer h3{
         width: 100%;
         height:120px;
         background-color: #070580;
-        z-index: 2000;
+        z-index: 9000;
     
     }
 
@@ -506,6 +602,8 @@ footer h3{
     width: 100%;
 }
 
+/*MENU HAMBURGUESA*/
+
 .menu{
     margin: auto;
     position: relative;
@@ -523,7 +621,7 @@ ul.menu {
     transition: 1.5s ease;
     left: -100%;
     flex-direction: column;
-    width: 50vw;
+    width: 50%;
     height: 100vh;
     background: rgb(7, 5, 128, 1);
     border-right: 3px solid rgba(255, 255, 255, 0.8);   
@@ -548,6 +646,15 @@ ul.menu li {
     
 }
 
+/*TERMINA EL MENU HAMBURGUESA*/
+
+/*CARRITO COMPRAS*/
+
+.menu-toggle-carrito{
+    width: 50%;
+}
+
+/*TERMINA EL CARRITO DE COMPRAS*/
 
 /*CARD Y CONTENEDOR*/
 .carrousel-articulos-destacados{
@@ -574,11 +681,7 @@ ul.menu li {
     animation-fill-mode: forwards;
 }
 
-.menu.active {
-    animation-name: slideInFromLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-}
+
 
 /*FOOTER*/
 

@@ -19,13 +19,12 @@
             <!--<img class="portada" src="IMG/IMAGEN.jpg" alt="">-->
             <nav class="contenedor-links">
                 <div class="menu-toggle" id="menu-toggle">
-                    <div class="hamburger"></div>
-                    <div class="hamburger"></div>
-                    <div class="hamburger"></div>
+                    <div class="hamburguer"></div>
+                    <div class="hamburguer"></div>
+                    <div class="hamburguer"></div>
                 </div>
                 <h1><a href="index.html">VM</a></h1>
-                <ul class="menu" id="menu">
-                    
+                <ul class="menu" id="menu">    
                     <li><a href="Secciones/pantalones.html">PANTALONES</a></li>
                     <li><a href="Secciones/remeras.html">REMERAS</a></li>
                     <li><a href="Secciones/buzos.html">BUZOS</a></li>
@@ -33,7 +32,23 @@
                     <li><a href="Secciones/contacto.html">CONTACTO</a></li>
                 </ul>
             </nav>
-            <a href="Secciones/carrito.html"><img class="carrito-img" src="IMG/img-shop.png" alt=""></a>
+            <nav class="contenedor-carrito">
+                <div class="carrito-toggle" id="carrito-toggle">
+                    <img class="carrito-img" src="IMG/img-shop.png" alt="">
+                </div>
+                <div class="menu-carrito" >
+                    <div class="menu-toggle-carrito" id="menu-toggle-carrito">
+                        <div class="contenedor-items-carrito">
+                            <p class="parrafo-carrito">CARRITO</p>
+                            <div id="carrito">
+                                <ul id="carrito-items">
+                                    <p>Total: $<span id="carrito-total">0</span></p>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
     </header>
     <!---->
@@ -54,29 +69,29 @@
                 <div class="contenedor-quienes-somos">
 
                     <div class="contenedor-secciones">
+                        <img src="IMG/pantalones-cami.jpg" alt="">
                         <a href="Secciones/pantalones.html">
-                            <img src="IMG/pantalones-cami.jpg" alt="">
+                            <p class="texto-secciones">PANTALONES</p>
                         </a>
-                        <p class="texto-secciones">PANTALONES</p>
                     </div>
 
                     <div class="contenedor-secciones">
+                        <img src="IMG/remeras-cami.jpg" alt="">
                         <a href="Secciones/remeras.html">
-                            <img src="IMG/remeras-cami.jpg" alt="">
+                            <p class="texto-secciones">REMERAS</p>
                         </a>
-                        <p class="texto-secciones">REMERAS</p>
                     </div>
                     <div class="contenedor-secciones">
+                        <img src="IMG/negro-vm.jpg" alt="">
                         <a href="Secciones/buzos.html">
-                            <img src="IMG/negro-vm.jpg" alt="">
+                            <p class="texto-secciones">BUZOS</p>
                         </a>
-                        <p class="texto-secciones">BUZOS</p>
                     </div>
                     <div class="contenedor-secciones">
+                        <img src="IMG/piolita.jpeg" alt="">
                         <a href="Secciones/accesorios.html">
-                            <img src="IMG/piolita.jpeg" alt="">
+                            <p class="texto-secciones">ACCESORIOS</p>
                         </a>
-                        <p class="texto-secciones">ACCESORIOS</p>
                     </div>
                     
 
@@ -90,12 +105,13 @@
             <h3>Artículos Destacados</h3>
             <div class="carrousel-articulos-destacados">
                 
-                <div class="card">
+
+                <div class="card" data-id="1" data-name="Producto 1" data-price="15000">
                     <img src="IMG/pantalones-cami.jpg" alt="" >
                     <div class="contenedor-detalles-card">
                         <p class="nombre-prod">SHORT VM</p>
                         <p class="precio-produc-card">$15000</p>
-                        <button class="btn-compra">Comprar</button>
+                        <button class="btn-add btn-compra ">Comprar</button>
                     </div>
                 </div>
 
