@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function(){
     let carritoTogle = document.getElementById('carrito-toggle');
     let menuCarrito = document.getElementById('menu-toggle-carrito');
-
+    
     carritoTogle.addEventListener('click', function(){
         menuCarrito.classList.toggle('active');
     });
@@ -47,10 +47,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
+/*CARRITO DE COMPRAS */
 document.addEventListener('DOMContentLoaded', () => {
     const carrito = [];
     const carritoItems = document.getElementById('carrito-items');
     const carritoTotal = document.getElementById('carrito-total');
+    const enviarPedido = document.getElementById('enviar-pedido');
 
     document.querySelectorAll('.btn-add').forEach(button => {
         button.addEventListener('click', () => {
@@ -58,12 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const id = card.getAttribute('data-id');
             const name = card.getAttribute('data-name');
             const price = parseFloat(card.getAttribute('data-price'));
+            const img = card.getAttribute('data-img');
 
             const productIndex = carrito.findIndex(item => item.id === id);
             if (productIndex !== -1) {
                 carrito[productIndex].quantity += 1;
             } else {
-                carrito.push({ id, name, price, quantity: 1 });
+                carrito.push({ id, name, price, img, quantity: 1 });
             }
 
             renderCarrito();
@@ -77,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         carrito.forEach(product => {
             const li = document.createElement('li');
             li.innerHTML = `
+                <img src="${product.img}" alt="${product.name}" style="width: 100px; height: 100px;">
                 ${product.name} - $${product.price} x ${product.quantity}
                 <button class="btn-remove" data-id="${product.id}">Eliminar</button>
                 <button class="btn-increase" data-id="${product.id}">+</button>
@@ -122,4 +127,17 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    enviarPedido.addEventListener('click', () => {
+        let mensaje = '¡Hola! Quisiera hacer el siguiente pedido:\n\n';
+        carrito.forEach(product => {
+            mensaje += `${product.name} - $${product.price} x ${product.quantity}\n`;
+        });
+        mensaje += `\nTotal: $${carritoTotal.textContent}`;
+
+        const numeroWhatsApp = '5492267419086'; 
+        const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+
+        window.open(url, '_blank');
+    });
 });

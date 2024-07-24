@@ -6,6 +6,7 @@
 
 *{
     scrollbar-width: none;
+    
 }
 
 body{
@@ -109,41 +110,27 @@ header {
     cursor: pointer;
 }
 
-.menu-carrito{
-    display: flex;
-    flex-direction: column;
+#menu-toggle-carrito {
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-
-/*TODO ESTO ES EL MENU DEL CARRITO DESPLEGABLE*/
-.menu-toggle-carrito{
-    margin: auto;
-    position: relative;
+/* TODO ESTO ES EL MENU DEL CARRITO DESPLEGABLE */
+.menu-toggle-carrito {
+    position: absolute; /* Cambiado a fixed para evitar que se desborde */
     top: 119px;
-    right: 0;
-    
-}
-
-/*ACTIVADOR*/
-.menu-toggle-carrito {
-    position: absolute;
-    animation-fill-mode: forwards;
-}
-
-.menu-toggle-carrito {
-    transition: 1.5s ease;
-    right: -100%;
+    right: -100%; /* Fuera de la vista a la derecha */
+    width: 30%;
+    height: 100%; /* Ajustado para evitar desbordamiento en altura */
+    background: rgba(7, 5, 128, 1);
+    border-left: 3px solid rgba(255, 255, 255, 0.8);
     flex-direction: column;
-    width: 30% ;
-    height: 100vh;
-    background: rgb(7, 5, 128, 1);
-    border-left: 3px solid rgba(255, 255, 255, 0.8);   
+    transition: right 1.5s ease;
+    display: flex;
 }
 
 .menu-toggle-carrito.active {
-    transition: 1.5s ease;
     right: 0;
-    display: flex;
 }
 
 /*ESTILOS DENTRO DEL CARRITO*/
@@ -176,15 +163,41 @@ header {
     width: 100%;
     height: 100%;
     background: #FFFFFF;
+    padding: 20px 0;
 }
 
-ul.carrito-items{
-    background-color: #F75B2B;
-    width: 100%;
+#carrito-items{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    list-style: none;
+    height: 100%;
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    
 }
+
 
 .btn-remove{
     background-color: #070580;
+}
+
+
+#enviar-pedido{
+    width: 150px;
+    height: 100px;
+    margin: auto;
+    background-color: #F75B2B;
+    border: 5px solid #070580;
+    color: #FFFFFF;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 700;
+    border-radius: 100px;
+    cursor: pointer;
 }
 
 
@@ -646,6 +659,11 @@ ul.menu li {
     
 }
 
+.menu {
+    position: absolute;
+    animation-fill-mode: forwards;
+}
+
 /*TERMINA EL MENU HAMBURGUESA*/
 
 /*CARRITO COMPRAS*/
@@ -676,10 +694,7 @@ ul.menu li {
     transform: none;
 }
 
-.menu {
-    position: absolute;
-    animation-fill-mode: forwards;
-}
+
 
 
 
