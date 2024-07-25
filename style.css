@@ -6,7 +6,6 @@
 
 *{
     scrollbar-width: none;
-    
 }
 
 body{
@@ -110,28 +109,35 @@ header {
     cursor: pointer;
 }
 
-#menu-toggle-carrito {
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-/* TODO ESTO ES EL MENU DEL CARRITO DESPLEGABLE */
-.menu-toggle-carrito {
-    position: absolute; /* Cambiado a fixed para evitar que se desborde */
-    top: 119px;
-    right: -100%; /* Fuera de la vista a la derecha */
-    width: 30%;
-    height: 100%; /* Ajustado para evitar desbordamiento en altura */
-    background: rgba(7, 5, 128, 1);
-    border-left: 3px solid rgba(255, 255, 255, 0.8);
-    flex-direction: column;
-    transition: right 1.5s ease;
+.contenedor-carrito{
     display: flex;
 }
 
-.menu-toggle-carrito.active {
+.menu-toggle-carrito{
+    position: fixed;
+    background: #070580;
+    z-index: 50;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    max-width: 95vw;
+    max-height: 95vh;
+    height: 700px;
+    width: 350px;
+    top: 130px;
     right: 0;
+    border-radius: 20px;
+    
 }
+
+.menu-toggle-carrito.active{
+    transform: translateX(-1%);
+}
+
+
+/* TODO ESTO ES EL MENU DEL CARRITO DESPLEGABLE */
+
+
 
 /*ESTILOS DENTRO DEL CARRITO*/
 
@@ -140,9 +146,7 @@ header {
 }
 
 .contenedor-items-carrito{
-    width: 100%;
-    height: 50%;
-    margin: 100px auto;
+    margin: 0 auto;
     border-radius: 20px;
     box-sizing: border-box;
 }
@@ -161,9 +165,12 @@ header {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 400px;
     background: #FFFFFF;
+    margin: 20px 0;
     padding: 20px 0;
+    overflow: scroll;
+
 }
 
 #carrito-items{
@@ -186,8 +193,13 @@ header {
     background-color: #070580;
 }
 
+.contenedor-items-carrito .enviar-pedido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-#enviar-pedido{
+.enviar-pedido{
     width: 150px;
     height: 100px;
     margin: auto;
@@ -545,13 +557,11 @@ footer h3{
 @media only screen and (max-width: 800px){
 
     header {
-        position: sticky;
+        position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height:120px;
         background-color: #070580;
-        z-index: 9000;
+        z-index: 100;
     
     }
 
@@ -567,157 +577,158 @@ footer h3{
         margin: 30px auto;
     }
 
-.contenedor-links .close-hamburguesa{
-    display: flex;
-    justify-content: end;
-    color: #FFFFFF;
+    .contenedor-links .close-hamburguesa{
+        display: flex;
+        justify-content: end;
+        color: #FFFFFF;
+        
+
+    }
+
+    .main-presentacion{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .slogan-presentacion-web{
+        margin: 0;
+        margin-bottom: 5%;
+    }
+
+    .logo{
+        margin: 40px auto;
+    }
+
+    .quienes-somos p{
+        font-size: 15px;
+    }
+
+
+    .quienes-somos .contenedor-quienes-somos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-self: center;
+        gap: 10px;
+        
+    }
+
     
 
-}
+    /*MENU HAMBURGUESA*/
 
-.main-presentacion{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
+    .menu{
+        margin: auto;
+        position: relative;
+        top: 119px;
+        left: 0;
+        padding: 20px;
+    }
 
-.slogan-presentacion-web{
-    margin: 0;
-    margin-bottom: 5%;
-}
+    .menu-toggle {
+        display: flex;
+        
+    }
 
-.logo{
-    margin: 40px auto;
-}
+    ul.menu {
+        transition: 1.5s ease;
+        left: -100%;
+        flex-direction: column;
+        width: 50%;
+        height: 100vh;
+        background: rgb(7, 5, 128, 1);
+        border-right: 3px solid rgba(255, 255, 255, 0.8);   
+    }
 
-.quienes-somos p{
-    font-size: 15px;
-}
-
-
-.quienes-somos{
-    width: 80%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-
-}
-
-.quienes-somos .contenedor-quienes-somos{
-    justify-self: center;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    
-}
-
-.quienes-somos .contenedor-secciones{
-    width: 100%;
-}
-
-/*MENU HAMBURGUESA*/
-
-.menu{
-    margin: auto;
-    position: relative;
-    top: 119px;
-    left: 0;
-    padding: 20px;
-}
-
-.menu-toggle {
-    display: flex;
-    
-}
-
-ul.menu {
-    transition: 1.5s ease;
-    left: -100%;
-    flex-direction: column;
-    width: 50%;
-    height: 100vh;
-    background: rgb(7, 5, 128, 1);
-    border-right: 3px solid rgba(255, 255, 255, 0.8);   
-}
-
-ul.menu.active {
-    transition: 1.5s ease;
-    left: 0;
-    display: flex;
-}
+    ul.menu.active {
+        transition: 1.5s ease;
+        left: 0;
+        display: flex;
+    }
 
 
-ul.menu li {
-    margin: 40px 0;
-    padding: 0;
-}
+    ul.menu li {
+        margin: 40px 0;
+        padding: 0;
+    }
 
-.menu a{
-    text-align: start;
-    padding: 5px 0;
-    font-size: 1rem;
-    
-}
+    .menu a{
+        text-align: start;
+        padding: 5px 0;
+        font-size: 1rem;
+        
+    }
 
-.menu {
-    position: absolute;
-    animation-fill-mode: forwards;
-}
+    .menu {
+        position: absolute;
+        animation-fill-mode: forwards;
+    }
 
-/*TERMINA EL MENU HAMBURGUESA*/
+    /*TERMINA EL MENU HAMBURGUESA*/
 
-/*CARRITO COMPRAS*/
+    /*CARRITO COMPRAS*/
 
-.menu-toggle-carrito{
-    width: 50%;
-}
+    .menu-toggle-carrito{
+        height: 500px;
+        width: 200px;
+        top: 120px;
+        border-radius: 0px 0px 20px 20px;
+    }
 
-/*TERMINA EL CARRITO DE COMPRAS*/
+    .menu-toggle-carrito.active{
+        transform: translateX(0);
+    }
 
-/*CARD Y CONTENEDOR*/
-.carrousel-articulos-destacados{
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    justify-self: center;
-    width: 70%;
-    overflow: visible;
-    margin: 0 auto;
+    #carrito{
+        height: 240px;
+    }
 
-}
+    /*TERMINA EL CARRITO DE COMPRAS*/
 
-.card{
-    width: 100%;
-}
+    /*CARD Y CONTENEDOR*/
+    .carrousel-articulos-destacados{
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-self: center;
+        width: 70%;
+        overflow: visible;
+        margin: 0 auto;
 
-.card:hover{
-    transform: none;
-}
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    .card:hover{
+        transform: none;
+    }
 
 
 
 
 
-/*FOOTER*/
+    /*FOOTER*/
 
-.contenedor-footer{
-    width: 100%;
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    
-    
-}
+    .contenedor-footer{
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        
+        
+    }
 
-.contenedor-pagos p{
-    width: 150px;
-}
+    .contenedor-pagos p{
+        width: 150px;
+    }
 
-.contenedor-redes-sociales p{
-    width: 150px;
-}
+    .contenedor-redes-sociales p{
+        width: 150px;
+    }
 
-}
+    }
 
 
 
