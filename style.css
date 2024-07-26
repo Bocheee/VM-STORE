@@ -179,32 +179,66 @@ header {
     height: 400px;
     margin: 20px 0;
     padding: 20px 0;
+    box-sizing: border-box;
     overflow: scroll;
     border-radius: 30px;
-    background: lightgrey;
+    background: #FFFFFF;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;   
 
 
 }
 
 #carrito-items{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
     height: 100%;
-    width: 50%;
+    width: 100%;
     padding: 0;
     margin: 0;
     text-align: center;
     color: #FFFFFF;
-    
 }
 
+#carrito-items li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    color: #000;
+    gap: 20px;
+}
 
+/*botones del carrito*/
 .btn-remove{
     background-color: #070580;
+    border: none;
+    border-radius: 10px;
+    color: #FFFFFF;
+    height: 30px;
+    width: 100px;
+}
+
+.btn-increase{
+    background-color: #070580;
+    border: none;
+    border-radius: 10px;
+    color: #FFFFFF;
+    height: 30px;
+    width: 100px;
+}
+
+.btn-decrease{
+    background-color: #070580;
+    border: none;
+    border-radius: 10px;
+    color: #FFFFFF;
+    height: 30px;
+    width: 100px;
+}
+
+.name{
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 800;
+    font-size: 200px;
+
 }
 
 .contenedor-items-carrito .enviar-pedido{
