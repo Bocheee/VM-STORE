@@ -109,10 +109,15 @@ header {
     cursor: pointer;
 }
 
+/* TODO ESTO ES EL MENU DEL CARRITO DESPLEGABLE */
+
 .contenedor-carrito{
     display: flex;
 }
 
+.menu-toggle-carrito{
+    padding: 20px 20px;
+}
 .menu-toggle-carrito{
     position: fixed;
     background: #070580;
@@ -122,28 +127,21 @@ header {
     overflow-y: auto;
     max-width: 95vw;
     max-height: 95vh;
-    height: 700px;
     width: 350px;
     top: 130px;
     right: 0;
     border-radius: 20px;
-    
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;   
 }
 
 .menu-toggle-carrito.active{
-    transform: translateX(-1%);
+    transform: translateX(-2%);
 }
-
-
-/* TODO ESTO ES EL MENU DEL CARRITO DESPLEGABLE */
 
 
 
 /*ESTILOS DENTRO DEL CARRITO*/
 
-.menu-toggle-carrito{
-    padding: 0 20px;
-}
 
 .contenedor-items-carrito{
     margin: 0 auto;
@@ -151,12 +149,25 @@ header {
     box-sizing: border-box;
 }
 
-.contenedor-items-carrito .parrafo-carrito{
+.texto-carrito-btn-closed{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #3d94cf;
+}
+
+.texto-carrito-btn-closed .parrafo-carrito{
     text-align: center;
     font-family: "Source Sans 3", sans-serif;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 25px;
     color: #FFFFFF;
+}
+
+
+.texto-carrito-btn-closed .closed-img{
+    width: 30px;
+    cursor: pointer;
 }
 
 #carrito{
@@ -166,10 +177,13 @@ header {
     flex-direction: column;
     width: 100%;
     height: 400px;
-    background: #FFFFFF;
     margin: 20px 0;
     padding: 20px 0;
     overflow: scroll;
+    border-radius: 30px;
+    background: lightgrey;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;   
+
 
 }
 
@@ -178,13 +192,13 @@ header {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    background-color: #FFFFFF;
     list-style: none;
     height: 100%;
     width: 50%;
     padding: 0;
     margin: 0;
     text-align: center;
+    color: #FFFFFF;
     
 }
 
@@ -200,17 +214,32 @@ header {
 }
 
 .enviar-pedido{
-    width: 150px;
-    height: 100px;
-    margin: auto;
-    background-color: #F75B2B;
-    border: 5px solid #070580;
-    color: #FFFFFF;
-    font-family: "Source Sans 3", sans-serif;
-    font-weight: 700;
+    padding: 12.5px 30px;
+    border: 0;
     border-radius: 100px;
-    cursor: pointer;
+    background-color: #2ba8fb;
+    color: #ffffff;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    margin: auto;
 }
+
+.enviar-pedido:hover {
+    background-color: #6fc5ff;
+    box-shadow: 0 0 20px #6fc5ff50;
+    transform: scale(1.1);
+}
+
+.enviar-pedido:active {
+    background-color: #3d94cf;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+}
+
+/*TERMINA ESTILOS DENTRO DEL CARRITO*/
 
 
 /*TERMINA EL MENU DEL CARRITO*/
@@ -395,26 +424,31 @@ header {
     font-size: 20px;
 }
 
-.card .precio-produc-card{
+.boton-compra-precio{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.boton-compra-precio .precio-produc-card{
     font-family: "Source Sans 3", sans-serif;
     font-weight: 700;
     font-size: 20px;
 }
 
-.card .btn-compra{
-    position: relative;
+.boton-compra-precio .btn-compra{
     bottom: 50px;
     font-family: "Source Sans 3", sans-serif;
     font-weight: 700;
-    padding: 10px;
     font-size: 15px;
     border-radius: 30px;
     background: #070580;
     border: none;
     color: #FFFFFF;
     width: 100px;
-    justify-self: end;
+    height: 40px;
     cursor: pointer;
+    
 }
 
 /*-----TERMINA DESTACADOS-----*/
@@ -441,9 +475,12 @@ footer h3{
 .contenedor-footer{
     width: 80%;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
     
 }
+
+
 
 .contenedor-footer p {
     color: #FFFFFF ;
@@ -454,23 +491,30 @@ footer h3{
 
 .contenedor-footer i{
     font-size: 40px;
+    
 }
 
 .contenedor-footer ul{
     list-style: none;
+    padding: 0;
+    
 }
 
 .contenedor-footer a{
     text-decoration: none;
-    color: rgb(255, 255, 255, 0.7);
+    color: rgb(255, 255, 255,0.8);
     font-family: "Monserrat";
     font-weight: 700;
     
 }
 
+.contenedor-footer a:hover {
+    color: #FFFFFF;
+}
+
 .contenedor-footer li{
     list-style: none;
-    width: 50%;
+    padding: 5px 0;
 }
 
 
@@ -478,9 +522,6 @@ footer h3{
     border-bottom: 2px solid #F75B2B;
     width: 140px;
 }
-
-
-
 
 .contenedor-ayuda p{
     border-bottom: 2px solid #F75B2B;
@@ -501,6 +542,15 @@ footer h3{
     width: 130px;
 }
 
+
+
+.contenedor-redes-sociales ul{
+    margin: auto;
+    display: flex;
+    padding: 0;
+    gap: 0 20px;
+}
+
 .contenedor-redes-sociales i{
     color: #ffffff;
     font-size: 30px;
@@ -509,19 +559,7 @@ footer h3{
 
 /*TERMINA FOOTER*/
 
-/*SECCIONES*/
 
-.contenedor-card{
-    margin: 100px 0;
-    width: 70%;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 50px;
-}
-
-
-/*TERMINA SECCIONES*/
 
 @media only screen and (max-width: 1200px) {
 
@@ -669,10 +707,11 @@ footer h3{
     /*CARRITO COMPRAS*/
 
     .menu-toggle-carrito{
-        height: 500px;
-        width: 200px;
-        top: 120px;
+        height: 100vh;
+        width: 300px;
+        top: 0;
         border-radius: 0px 0px 20px 20px;
+        box-shadow: none;
     }
 
     .menu-toggle-carrito.active{
@@ -686,7 +725,7 @@ footer h3{
     /*TERMINA EL CARRITO DE COMPRAS*/
 
     /*CARD Y CONTENEDOR*/
-    .carrousel-articulos-destacados{
+    .carrousel-articulos-destacados{ /*cambiar nombre*/
         padding: 0;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -708,17 +747,9 @@ footer h3{
 
 
 
-
     /*FOOTER*/
 
-    .contenedor-footer{
-        width: 100%;
-        display: flex;
-        justify-content: start;
-        flex-direction: column;
-        
-        
-    }
+    
 
     .contenedor-pagos p{
         width: 150px;
@@ -728,7 +759,9 @@ footer h3{
         width: 150px;
     }
 
-    }
+    
+
+}
 
 
 

@@ -33,7 +33,29 @@
                     <li><a href="contacto.html">CONTACTO</a></li>
                 </ul>
             </nav>
-            <a href="carrito.html"><img class="carrito-img" src="/IMG/img-shop.png" alt=""></a>
+            <div class="carrito-toggle" id="carrito-toggle">
+                <img class="carrito-img" src="/IMG/img-shop.png" alt="">
+            </div>
+            <nav class="contenedor-carrito">
+                <div class="menu-toggle-carrito" id="menu-toggle-carrito">
+                    <div class="contenedor-items-carrito">
+                        <div class="texto-carrito-btn-closed">
+                            <p class="parrafo-carrito">CARRITO</p>
+                            <div class="btn-cierre" id="btn-cierre">
+                                <img class="closed-img" src="/IMG/img-closed.png" alt="">
+                            </div>
+                        </div>
+                        <div id="carrito">
+                            <ul id="carrito-items">
+                                <p>Total: $<span id="carrito-total">0</span></p>
+                            </ul>
+
+                        </div>
+                        <button class="enviar-pedido" id="enviar-pedido">Contactar por whatsapp</button>
+                    </div>
+                </div>
+                
+            </nav>
         </div>
     </header>
 
@@ -75,8 +97,8 @@
             </div>
 
             <div class="contenedor-redes-sociales">
+                <p>Redes Sociales</p>
                 <ul>
-                    <p>Redes Sociales</p>
                     <li><a href=""><i class='bx bxl-facebook-circle'></i></a></li>
                     <li><a href=""><i class='bx bxl-instagram'></i></a></li>
                     <li><a href=""><i class='bx bxl-whatsapp'></i></a></li>

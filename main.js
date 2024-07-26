@@ -20,10 +20,17 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function(){
     let carritoTogle = document.getElementById('carrito-toggle');
     let menuCarrito = document.getElementById('menu-toggle-carrito');
+    let btnClosed = document.getElementById('btn-cierre');
+    
     
     carritoTogle.addEventListener('click', function(){
         menuCarrito.classList.toggle('active');
+    
     });
+
+    btnClosed.addEventListener('click', function () {
+        menuCarrito.classList.toggle('active');
+    })
 });
 
 /* TERMINA EL CARRITO */
