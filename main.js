@@ -1,6 +1,4 @@
 
-
-
 /*menu hamburguesa*/
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -107,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const productIndex = carrito.findIndex(item => item.id === id);
                 if (productIndex !== -1) {
                     carrito.splice(productIndex, 1);
+                    
                 }
                 renderCarrito();
             });

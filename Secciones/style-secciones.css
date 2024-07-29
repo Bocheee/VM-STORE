@@ -261,8 +261,7 @@ header {
 
 /*FILTROS*/
 .contenedor-general-filtros{
-    margin: 20px;
-    width: 300px;
+    margin: 20px auto;
 }
 
 .contenedor-general-filtros p{
@@ -362,7 +361,7 @@ header {
     font-family: "Monserrat";
     font-weight: 700;
     font-size: 50px;
-    text-align: center;
+    text-align: start;
 }
 
 
@@ -375,7 +374,7 @@ header {
 
 /*-----CARDS-----*/
 .card{
-    width: 300px;
+    width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -390,7 +389,7 @@ header {
 
 .card img{
     width: 100%;
-    border-radius: 20px;
+    
 }
 
 .contenedor-detalles-card{
@@ -438,31 +437,91 @@ header {
 /*contacto*/
 
 .contenedor-secciones-contacto{
-    max-width: 100vw;
+    max-width: 90vw;
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 0;
+    margin: 0 auto;
 }
 
 .contenedor-secciones{
-    max-width: 80vw;
-    width: 70vw;
-    height: 50vh;
-    background-color: #ffffff;
-    border-radius: 20px;
+    max-width: 90vw;
+    width: 80vw;
+    background: rgb(7, 5, 128, 1);
+    border-radius: 10px;
     gap: 20px;
     margin: 50px 0;
-    box-sizing: border-box;
-    box-shadow: 0 10px 20px 5px #6c6c6c;
+    padding: 0;
+    box-shadow: 0 10px 20px 5px #6c6c6c71;
+    overflow: hidden;
 }
 
-.contenedor-secciones p{
-    text-align: center;
-    font-family: "Source Sans 3", sans-serif;
+.contenedor-secciones .titulo-secciones{
+    text-align: start;
+    border-bottom:2px solid #F75B2B;
+    padding: 15px 20px;
+    font-family: "Tan-Meringue";
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    margin: 0;
 }
+
+.contenedor-secciones .contenedor-seccion-informacion{
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding:0 20px;
+    overflow: hidden;
+}
+
+.contenedor-secciones-contacto h4{
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000;
+    padding: 0;
+    margin: 20px auto;
+    text-align: justify;
+}
+
+/*Preguntas Frecuentes*/
+.contenedor-preguntas-frecuentes{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 20px 0;
+    text-align: start;
+}
+
+.contenedor-preguntas-frecuentes strong{
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 800;
+}
+
+.contenedor-preguntas-frecuentes p{
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+    color: rgba(0, 0, 0);
+}
+
+/*Desarrolladores
+.contenedor-desarrolladores{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.info-desarrolladores{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}*/
+
 
 /*-----TERMINA DESTACADOS-----*/
 
@@ -486,7 +545,7 @@ footer h3{
 
 
 .contenedor-footer{
-    width: 80%;
+    width: 70%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -568,6 +627,36 @@ footer h3{
     color: #ffffff;
     font-size: 30px;
 
+}
+
+/*creadores*/
+
+.contenedor-creadores{
+    border-top:1px solid #F75B2B ;
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    
+}
+
+.contenedor-creadores strong{
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 800;
+    color: #FFFFFF;
+    font-size: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.contenedor-creadores a{
+    text-decoration: none;
+}
+
+.contenedor-creadores i{
+    font-size: 40px;
+    text-decoration: none;
+    list-style: none;
+    color: #FFFFFF;
 }
 
 /*TERMINA FOOTER*/
@@ -773,12 +862,18 @@ footer h3{
     /*TERMINA FOOTER*/
 
     /*FILTROS Y CARDS*/
-    
+    .contenedor-general-filtros{
+        margin: 0;
+    }
 
     .contenedor-card{
         margin: 0 auto;
+        
     }
 
+    .card{
+        width: 100%;
+    }
 
     .card:hover{
         transform: none;
@@ -786,6 +881,19 @@ footer h3{
 
 
     /*TERMINA FILTROS Y CARD*/
+
+
+
+    /*contacto*/
+
+    .contenedor-secciones{
+        
+    }
+
+    .contenedor-secciones-contacto h4{
+        font-size: 20px;
+        text-align: start;
+    }
 }
 
 
